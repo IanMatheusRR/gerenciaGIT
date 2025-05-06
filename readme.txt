@@ -1,0 +1,1 @@
+C:\Users\E3719> C:\Users\E3719\Documents\PLATAFORMA_WEB_GERENTES\php-portable\php.exe -S localhost:8000 -t C:\Users\E3719\Documents\PLATAFORMA_WEB_GERENTES\public

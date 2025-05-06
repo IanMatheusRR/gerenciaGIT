@@ -1,0 +1,251 @@
+/* ===== styles.css ===== */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f8fa;
+}
+
+header {
+  background-color: #2f2e79;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+.main-container {
+  padding: 2rem;
+}
+
+/* Ajuste de grid dos botões (2×2) */
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+  justify-items: center;
+}
+
+.button-group button {
+  width: 70%;
+  background-color: #6d6ea8;
+  color: white;
+  border: none;
+  padding: 1.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-group button:hover {
+  background-color: #2f2e79;
+  transform: translateY(-2px);
+}
+
+.dashboard-placeholder {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #e3e5f1;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* --- Tabela de Entregáveis Interativa --- */
+.deliverables-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.deliverables-table thead th {
+  background-color: #6d6ea8;
+  color: white;
+  padding: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.deliverables-table tbody td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  vertical-align: top;
+}
+
+.deliverables-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.deliverables-table tbody tr:hover {
+  background-color: #003a63;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* --- Botão Voltar --- */
+.back-button {
+  background-color: #6d6ea8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+  background-color: #5f6062;
+  transform: translateY(-2px);
+}
+
+/* --- Fade-in/out para troca de páginas --- */
+#page {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#page.visible {
+  opacity: 1;
+}
+
+/* === NOVAS ESTILIZAÇÕES: Botão + Formulário === */
+
+/* Botão de ação animado */
+.action-button {
+  position: relative;
+  background-color: #4b4bb4;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+  overflow: hidden;
+}
+
+.action-button:hover {
+  background-color: #35359a;
+  transform: translateY(-2px);
+}
+
+.action-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.action-button:hover::after {
+  left: 200%;
+}
+
+/* Formulário animado (cadastro de tarefa) */
+.animated-form {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 2rem;
+}
+
+.animated-form.visible {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+/* Grid do formulário */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.form-grid input,
+.form-grid textarea {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  font-size: 0.9rem;
+}
+
+.form-grid textarea {
+  resize: vertical;
+}
+
+/* ... seu CSS existente acima ... */
+
+/* === NOVAS ESTILIZAÇÕES PARA BOTÕES DE DATA === */
+
+/* Botões de adicionar/remover data */
+#add-date-btn,
+#remove-date-btn {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+}
+
+#add-date-btn:hover,
+#remove-date-btn:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Ícones visuais no botão (apenas ilustrativos, você pode removê-los se já estiver no texto) */
+#add-date-btn::before {
+  content: "➕ ";
+}
+
+#remove-date-btn::before {
+  content: "➖ ";
+}
+
+/* CSS */
+.data-field {
+  opacity: 0;
+  visibility: hidden; /* Faz o campo invisível, mas ainda ocupa espaço */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Anima a opacidade e visibilidade */
+}
+
+.data-field.visible {
+  opacity: 1;
+  visibility: visible; /* Torna o campo visível */
+}
